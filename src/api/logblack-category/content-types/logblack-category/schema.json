@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logblack_categories",
+  "info": {
+    "singularName": "logblack-category",
+    "pluralName": "logblack-categories",
+    "displayName": "LogblackCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "descriptioin": {
+      "type": "text"
+    },
+    "contents": {
+      "type": "dynamiczone",
+      "components": [
+        "category-content.category-content",
+        "category-content.file",
+        "category-content.media",
+        "category-content.sub-title",
+        "category-content.table",
+        "category-content.url"
+      ]
+    },
+    "parentcode": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::logblack-category.logblack-category"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::meta.meta"
+    }
+  }
+}

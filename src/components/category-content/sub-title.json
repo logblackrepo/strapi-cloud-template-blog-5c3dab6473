@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_category_content_sub_titles",
+  "info": {
+    "displayName": "SubTitle"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

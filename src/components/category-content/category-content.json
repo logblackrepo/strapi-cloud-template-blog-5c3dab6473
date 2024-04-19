@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_category_content_category_contents",
+  "info": {
+    "displayName": "RichText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "RichText": {
+      "type": "text"
+    }
+  }
+}

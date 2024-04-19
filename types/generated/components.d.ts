@@ -1,5 +1,78 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CategoryContentCategoryContent extends Schema.Component {
+  collectionName: 'components_category_content_category_contents';
+  info: {
+    displayName: 'RichText';
+    description: '';
+  };
+  attributes: {
+    RichText: Attribute.Text;
+  };
+}
+
+export interface CategoryContentFile extends Schema.Component {
+  collectionName: 'components_category_content_files';
+  info: {
+    displayName: 'File';
+    description: '';
+  };
+  attributes: {
+    filename: Attribute.String;
+    file: Attribute.Media;
+  };
+}
+
+export interface CategoryContentMedia extends Schema.Component {
+  collectionName: 'components_category_content_media';
+  info: {
+    displayName: 'Image';
+    description: '';
+  };
+  attributes: {
+    image: Attribute.Media;
+  };
+}
+
+export interface CategoryContentSubTitle extends Schema.Component {
+  collectionName: 'components_category_content_sub_titles';
+  info: {
+    displayName: 'SubTitle';
+  };
+  attributes: {
+    subtitle: Attribute.String;
+  };
+}
+
+export interface CategoryContentTable extends Schema.Component {
+  collectionName: 'components_category_content_tables';
+  info: {
+    displayName: 'Table';
+    description: '';
+  };
+  attributes: {
+    table: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'blockBalloon';
+        }
+      >;
+    type: Attribute.Enumeration<['a', 'b', 'c']>;
+  };
+}
+
+export interface CategoryContentUrl extends Schema.Component {
+  collectionName: 'components_category_content_urls';
+  info: {
+    displayName: 'Url';
+  };
+  attributes: {
+    urlname: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +138,12 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'category-content.category-content': CategoryContentCategoryContent;
+      'category-content.file': CategoryContentFile;
+      'category-content.media': CategoryContentMedia;
+      'category-content.sub-title': CategoryContentSubTitle;
+      'category-content.table': CategoryContentTable;
+      'category-content.url': CategoryContentUrl;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
